@@ -1,4 +1,4 @@
-package com.example.sksb.damain.entity;
+package com.example.sksb.damain.article.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
