@@ -36,6 +36,8 @@ public class Member {
 
     private String password;
 
+    private String refreshToken;
+
     // 사용자의 권한을 간단하게 설정할 때
     public List<String> getAuthoritiesAsStringList() {
         return List.of("ROLE_MEMBER");
