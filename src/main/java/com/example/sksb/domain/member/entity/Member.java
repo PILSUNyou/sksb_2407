@@ -1,14 +1,11 @@
-package com.example.sksb.damain.member.entity;
+package com.example.sksb.domain.member.entity;
 
-import ch.qos.logback.classic.spi.ConfiguratorRank;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.validator.internal.IgnoreForbiddenApisErrors;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 

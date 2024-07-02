@@ -1,7 +1,7 @@
-package com.example.sksb.damain.member.service;
+package com.example.sksb.domain.member.service;
 
-import com.example.sksb.damain.member.entity.Member;
-import com.example.sksb.damain.member.repository.MemberRepository;
+import com.example.sksb.domain.member.entity.Member;
+import com.example.sksb.domain.member.repository.MemberRepository;
 import com.example.sksb.global.exceptions.GlobalException;
 import com.example.sksb.global.rsData.RsData;
 import lombok.Getter;
@@ -18,6 +18,7 @@ import java.util.Optional;
 public class MemberService {
     private final MemberRepository memberRepository;
     private final PasswordEncoder passwordEncoder;
+    private final AuthTokenService authTokenService;
 
     public Optional<Member> findByUsername(String username) {
         return memberRepository.findByUsername(username);
@@ -56,8 +57,8 @@ public class MemberService {
         if (!passwordMatches(member, password))
             throw new GlobalException("400-2", "비밀번호가 일치하지 않습니다.");
 
-        String refreshToken = "refreshToken";
-        String accessToken = "accessToken";
+        String refreshToken = authTokenService.genRefreshToken(member);
+        String accessToken = authTokenService.genAccessToken(member);
 
         return RsData.of(
                 "200-1",

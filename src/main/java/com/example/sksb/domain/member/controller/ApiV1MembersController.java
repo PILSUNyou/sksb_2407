@@ -1,6 +1,6 @@
-package com.example.sksb.damain.member.controller;
+package com.example.sksb.domain.member.controller;
 
-import com.example.sksb.damain.member.service.MemberService;
+import com.example.sksb.domain.member.service.MemberService;
 import com.example.sksb.global.rsData.RsData;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;

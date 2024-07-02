@@ -1,6 +1,6 @@
-package com.example.sksb.damain.member.repository;
+package com.example.sksb.domain.member.repository;
 
-import com.example.sksb.damain.member.entity.Member;
+import com.example.sksb.domain.member.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
