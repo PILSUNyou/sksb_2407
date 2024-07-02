@@ -24,5 +24,6 @@ public class MemberDto {
         this.modifyDate = member.getModifyDate();
         this.username = member.getUsername();
         this.authorities = member.getAuthoritiesAsStringList();
+
     }
 }
