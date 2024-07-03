@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -81,7 +80,7 @@ public class MemberService {
     public SecurityUser getUserFromAccessToken(String accessToken) {
         Map<String, Object> payloadBody = authTokenService.getDataFrom(accessToken);
 
-        long id = (int) payloadBody.get("id");
+        long id = (Integer) payloadBody.get("id");
         String username = (String) payloadBody.get("username");
         List<String> authorities = (List<String>) payloadBody.get("authorities");
 
